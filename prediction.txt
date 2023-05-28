@@ -1,0 +1,2 @@
+probabiloty: 0.999974
+prediction: 0

@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <!-- <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    /> -->
+
+    <script
+      src="https://kit.fontawesome.com/39b5c39a62.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <section id="header">
+      <img class="logo" src="{% static 'images/logo3.png' %}" />
+      <div class="header-conatiner">
+        <ul>
+          <li>
+            <a href="{% url 'dashboard' %}"
+              ><i class="fa-solid fa-house"></i> Dashboard</a
+            >
+          </li>
+          <li>
+            <a href="{% url 'result' %}"
+              ><i class="fa-solid fa-square-poll-vertical"></i> Result</a
+            >
+          </li>
+          <li>
+            <a href="{% url 'patient' %}"
+              ><i class="fa-sharp fa-solid fa-clipboard"></i> Patient List</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="logo-container">
+        <img id="logo-btn" src="{% static 'images/user.png' %}" />
+        <div id="logo-dropdown">
+          <a class="btn btn-outline-danger" href="{% url 'user_logout' %}"
+            >Logout</a
+          >
+        </div>
+      </div>
+    </section>
+    <h3>Information</h3>
+
+    <form method="post" enctype="multipart/form-data">
+      {%csrf_token%}
+      <div class="name-container">
+        <div class="name-labels">
+          <label for="first-name">First Name</label>
+          <label for="last-name">Last Name</label>
+        </div>
+        <div class="name-inputs">
+          <input type="text" id="first-name" name="firstname" />
+          <input type="text" id="last-name" name="lastname" />
+        </div>
+      </div>
+
+      <div class="radio-container">
+        <label for="sex">Sex:</label>
+        <label for="male">Male</label>
+        <input type="radio" id="male" name="sex" value="male" required />
+        <label for="female">Female</label>
+        <input type="radio" id="female" name="sex" value="female" />
+      </div>
+
+      <label for="age">Age</label>
+      <input type="number" id="age" name="age" required />
+
+      <label for="address">Address</label>
+      <input type="text" id="address" name="address" required />
+
+      <label for="contact-number">Contact Number</label>
+      <input type="text" id="contact-number" name="contactnumber" required />
+
+      <label for="date">Date</label>
+      <input type="date" id="date" name="date" required />
+      <br />
+
+      <input type="file" id="myFile" name="filename" />
+      <br />
+      <div class="submit">
+        <input type="submit" value="Submit" />
+      </div>
+    </form>
+    <script src="{% static 'js/script.js' %}"></script>
+  </body>
+</html>

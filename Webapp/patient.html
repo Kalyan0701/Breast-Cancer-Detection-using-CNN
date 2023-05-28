@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/patient.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/39b5c39a62.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Patients</title>
+  </head>
+  <body>
+    <section id="header">
+      <img class="logo" src="{% static 'images/logo3.png' %}" />
+      <div class="header-conatiner">
+        <ul>
+          <li>
+            <a href="{% url 'dashboard' %}"
+              ><i class="fa-solid fa-house"></i> Dashboard</a
+            >
+          </li>
+          <li>
+            <a href="{% url 'result' %}"
+              ><i class="fa-solid fa-square-poll-vertical"></i> Result</a
+            >
+          </li>
+          <li>
+            <a href="{% url 'patient' %}"
+              ><i class="fa-sharp fa-solid fa-clipboard"></i> Patient List</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="logo-container">
+        <img id="logo-btn" src="{% static 'images/user.png' %}" />
+        <div id="logo-dropdown">
+          <a class="btn btn-outline-danger" href="{% url 'user_logout' %}"
+            >Logout</a
+          >
+        </div>
+      </div>
+    </section>
+    <form action="{% url 'patient' %}">
+    <!-- Patient List -->
+
+    <div class="patientListContainer">
+      <h3>Patients Information</h3>
+      <div>
+        <table id="patientsTable">
+          <thead>
+            <tr>
+              <th>NAME</th>
+              <th>AGE</th>
+              <th>ADDRESS</th>
+              <th>GENDER</th>
+              <th>Prediction</th>
+              <th class="action-td">Action</th>
+              <th class="action-td">Image</th>
+            </tr>
+          </thead>
+          <tbody id="patientTableBody">
+            {% for i in infor%}
+            <tr>
+              <td>
+                {{i.firstname}}
+                {{i.lastname}}
+
+              </td>
+              <td>
+                {{i.age}}
+              </td>
+              <td>
+                {{i.address}}
+              </td>
+              <td>
+                {{i.gender}}
+              </td>
+              <td>
+                {{i.imgclassify}}
+              </td>
+              <td>
+                <a href="{% url 'deletePatient' i.id %}" class="d-button">Delete</a>
+            </td>
+            <td>
+           
+                <img src=" /images/{{i.filename}}" width="80" height="80">
+   
+            </td>
+            
+            </tr>
+            {%endfor%}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="{% static 'js/script.js' %}"></script>
+    
+  </body>
+</html>

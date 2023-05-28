@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Result</title>
+    <link rel="stylesheet" href="{% static 'css/result.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/39b5c39a62.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  </head>
+  <form action="{% url 'result' %}">
+  <body>
+    <section id="header">
+      <img class="logo" src="{% static 'images/logo3.png' %}" />
+      <div class="header-conatiner">
+        <ul>
+          <li>
+            <a href="{% url 'dashboard' %}"
+              ><i class="fa-solid fa-house"></i> Dashboard</a
+            >
+          </li>
+          <li>
+            <a href="{% url 'result' %}"
+              ><i class="fa-solid fa-square-poll-vertical"></i> Result</a
+            >
+          </li>
+          <li>
+            <a href="{% url 'patient' %}"
+              ><i class="fa-sharp fa-solid fa-clipboard"></i> Patient List</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="logo-container">
+        <img id="logo-btn" src="{% static 'images/user.png' %}" />
+        <div id="logo-dropdown">
+          <a class="btn btn-outline-danger" href="{% url 'user_logout' %}"
+            >Logout</a
+          >
+        </div>
+      </div>
+    </section>
+    
+   <p style="font-size: 20px; padding-left: 315px; margin-top: 18px; margin-bottom: 10px; color: #0c6624; position: relative; "><b>Result</b></p>
+    <div class="container">
+
+    <div class="resultss">
+      <div class="f-desc">
+        <div class="prediction-container">
+          
+          <img src="/images/{{userss.filename}}" alt="{{ prediction }}" width="90%" height="auto">
+          <div id="bar">
+            <div class="bar-container">
+              <p><b>Benign: {{ class0 }}</b></p>
+              <div class="bar-item" style="--width: calc({{ class0 }} * 100%); --color: var(--green);">
+                <span class="bar-label"></span>
+              </div>
+              <p><b>Malignant: {{ class1 }}</b></p>
+              <div class="bar-item" style="--width: calc({{ class1 }} * 100%); --color: var(--red);">
+                 <span class="bar-label"></span>
+              </div>
+              <p><b>Normal: {{ class2 }}</b></p> 
+              <div class="bar-item" style="--width: calc({{ class2 }} * 100%); --color: var(--blue);">
+               <span class="bar-label"></span>
+              </div>
+            </div>
+          </div>
+          <!-- <h4>{{ prediction }}</h4> -->
+        </div>
+      </div>
+      <div class="s-desc">
+        {{ desc }}
+      </div>
+    </div>
+    <form action="{% url 'dashboard' %}">
+    <script src="../script.js"></script>
+  </body>
+</html>

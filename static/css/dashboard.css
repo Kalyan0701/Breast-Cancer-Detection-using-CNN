@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+    background-color: rgba(233, 234, 233, 0.264);
+  }
+
+#header {
+    height: 120px;
+    width: 100vw;
+    padding: 10px 30px;
+    background-color: rgb(255, 255, 255);
+    z-index: 100;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0px;
+    display: flex;
+  }
+.header-conatiner{
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  width: 1200px;
+  height: 75px;
+  left: 350px;
+  margin: auto;
+}
+
+ul{
+  display: flex;
+  gap: 100px;
+  justify-content: center;
+  align-items: center;
+  margin-right: 250px;
+}
+
+ul li{
+  list-style: none;
+
+}
+
+ul li a{
+  text-decoration: none;
+  color: #3b3838;
+  font-family: Arial;
+  font-size: 16px;
+  transition: 0.4s ease-in-out;
+}
+
+ul li a:hover{
+  color: #179d3b;
+}
+.logo{
+  margin: auto;
+  width: 150px;
+  height: 49;
+}
+
+form {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+label {
+  display: flex;
+  margin-bottom: 1px;
+}
+
+input[type="text"],
+select,
+input[type="number"],
+input[type="date"] {
+  width:  40%;
+  padding: 8px;
+  border-radius: 0px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin-bottom: 13px;
+}
+
+input[type="radio"] {
+  margin-right: 50px;
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.name-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.name-labels {
+  display: flex;
+  gap: 224px;
+}
+
+.name-labels label {
+  margin: 0;
+}
+
+h3{
+  padding-left: 370px;
+  margin-top: 18px;
+  margin-bottom: 10px;
+  color: #0c6624;
+  position: relative;
+}
+
+.radio-container{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 13px;
+}
+.submit{
+  display: flex;
+  justify-content: end;
+}
+
+
+.logo-container {
+  position: relative;
+  }
+
+    #logo-dropdown {
+  position: absolute;
+  top: 70px
+    }
+
+  #logo-btn{
+  padding-top: 15px;
+  margin: auto;
+  width: 45px;
+  height: 20;
+    }
+

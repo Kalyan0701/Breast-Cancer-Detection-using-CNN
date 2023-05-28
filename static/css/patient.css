@@ -1,0 +1,54 @@
+.patientListContainer {
+  max-width: 1000px;
+  margin: 2rem auto 5rem auto;
+}
+
+.patientListContainer div {
+  background-color: white;
+  border: 1px solid rgb(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+#patientsTable {
+  min-width: 100%;
+}
+
+#patientsTable thead tr th {
+  padding: 10px 0;
+}
+
+#patientsTable tbody tr td {
+  padding: 10px 0px;
+}
+
+#patientsTable thead tr th {
+  text-align: left;
+}
+
+.patient {
+  margin-bottom: 2rem;
+  list-style: none;
+}
+
+.action-td {
+  text-align: center !important;
+  text-emphasis-color: red;
+}
+
+.action-button {
+  padding: 4px 10px;
+}
+
+.action-button :hover {
+  cursor: pointer;
+}
+h3{
+  padding: 0px;
+  position: relative;
+
+}
+.imgg{
+  height: 5%;
+  width: 5%;
+}
